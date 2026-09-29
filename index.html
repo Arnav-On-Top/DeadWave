@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> DeadWave</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <section id="introScreen" class="screen">
+            <div class="introBox">
+                <h1>DeadWave</h1>
+                <p class="introLine">
+                    Operation Terminal
+                </p>
+                <div class="introText">
+                    <p>Monitor the radio transmission. There are rumors of an unknown channel named Channel 00. The system gets hacked if the Operator clicks on the channel and the Operator goes missing. We added a new feature where if u, the new operator detect any known frequency or see channel 00 active/trasmitting, terminate it immediatly. All the best!!</p>
+                    <p></p>
+                    <p></p>
+                </div>
+                <button id="startButton" class="mainButton">
+                    Start Session
+                </button>
+                <p class="smallText">
+                    Authorized Operator // NightShift
+                </p>
+            </div>
+        </section>
+        <section id="terminalScreen" class="screen hidden">
+            <div class="terminal">
+                <header class="topBar">
+                    <div>
+                        <div class="terminalTitle"> Station 17 Control Terminal</div>
+                        <div id="currentStationText" class="terminalSubTitle">Monitoring Channel 04</div>
+                    </div>
+                    <div class="clockArea">
+                        <span>Session Time</span>
+                        <strongs id="clock">
+                            03:41:00
+                        </strongs>
+                    </div>
+                </header>
+                <main class="terminalBody">
+                    <aside class="channelPanel">
+                        <div class="panelTitle">Channels</div>
+                        <button id="channel01" class="channelButton">
+                            01
+                        </button>
+                        <button id="channel02" class="channelButton">02</button>
+                        <button id="channel03" class="channelButton">03</button>
+                        <button id="channel04" class="channelButton active">04</button>
+                        <button id="channel05" class="channelButton">05</button>
+                        <button id="channel06" class="channelButton">06</button>
+                        <button id="channel07" class="channelButton">07</button>
+                        <button id="channel08" class="channelButton">08</button>
+                        <button id="channel09" class="channelButton">09</button>
+                        <button id="channel10" class="channelButton">10</button>
+                        <div class="secretDivider"></div>
+                        <button id="channel00" class="channelButton secretChannel">00</button>
+                    </aside>
+                    <section class="mainTerminal">
+                        <div id="messageArea" class="messageArea"></div>
+                        <div class="transmissionLabel">Operator Transmission</div>
+                        <div class="inputRow">
+                            <input
+                            id="messageInput"
+                            type="text"
+                            placeholder="Type a message..."
+                            autocomplete="off">
+                            <button id="sendButton" class="sendButton">Transmit</button>
+                        </div>
+                    </section>
+                </main>
+                <footer class="bottomBar">
+                    <button id="recordButton">Record</button>
+                    <button id="muteButton">Mute</button>
+                    <button id="terminateButton" class="terminateButton">Terminate</button>
+                    <span id="systemStatus">System Status: Normal</span>
+                </footer>
+            </div>
+        </section>
+        <section id="deviceScreen" class="screen hidden">
+            <div class="deviceBox">
+                <h1>I got access to your device info</h1>
+                <p class="introLine">
+                    Connection Lost
+                </p>
+                <div class="deviceInfo">
+                    <h2></h2>
+                    <p>
+                        Screen Size: 
+                        <span id="deviceScreenSize">---</span>
+                    </p>
+                    <p>
+                        Window Size: 
+                        <span id="windowSize">---</span>
+                    </p>
+                    <p>
+                        Screen Ratio:
+                        <span id="screenRatio">---</span>
+                    </p>
+                    <p>
+                        Local Time:
+                        <span id="localTime">---</span>
+                    </p>
+                    <p>
+                        Timezone:
+                        <span id="timeZone">---</span>
+                    </p>
+                    <p>
+                        Language:
+                        <span id="language">---</span>
+                    </p>
+                    <p>
+                        Online:
+                        <span id="onlineStatus">---</span>
+                    </p>
+                    <p>
+                        Pixel Ratio:
+                        <span id="pixelRatio">---</span>
+                    </p>
+                    <p>
+                        Platform:
+                        <span id="platform">---</span>
+                    </p>
+                    <p>
+                        Battery:
+                        <span id="battery">---</span>
+                    </p>
+                </div>
+                <p class="finalWarning">
+                    If you hear channel 00 again,
+                    <br>
+                    Do NOT answer
+                </p>
+            </div>
+        </section>
+        <div id="corruptionOverlay" class="hidden">
+            <div class="corruptionLines"></div>
+            <div id="corruptionText">Signal Lost</div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
